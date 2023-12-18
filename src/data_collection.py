@@ -32,22 +32,27 @@ for departement_number in range(1, 99):
                 # Utiliser gzip pour décompresser les données
                 with gzip.open(compressed_file, 'rt') as csv_file:
                     try:
-                        print(f"Lecture du fichier CSV pour le département {departement_number}")
+                        print(
+                            f"Lecture du fichier CSV pour le département {departement_number}")
                         # Lire le CSV dans un DataFrame pandas
                         df = pd.read_csv(csv_file)
 
                         # Fusionner le DataFrame au DataFrame existant
-                        merged_df = pd.concat([merged_df, df], ignore_index=True)
+                        merged_df = pd.concat(
+                            [merged_df, df], ignore_index=True)
 
                         # Print un message quand le fichier CSV est fusionné
-                        print(f"Le fichier CSV a été fusionné : {departement_number}")
+                        print(
+                            f"Le fichier CSV a été fusionné : {departement_number}")
 
                     except pd.errors.ParserError as e:
                         # Print un message en cas d'erreur de lecture du CSV
-                        print(f"Erreur lors de la lecture du fichier CSV pour le département {departement_number}: {e}")
+                        print(
+                            f"Erreur lors de la lecture du fichier CSV pour le département {departement_number}: {e}")
         else:
             # Print un message en cas d'échec de téléchargement
-            print(f"Échec du téléchargement pour le département {departement_number}. Code de statut HTTP : {response.status_code}")
+            print(
+                f"Échec du téléchargement pour le département {departement_number}. Code de statut HTTP : {response.status_code}")
 
 # Définir le chemin du fichier de sortie dans le répertoire de destination
 output_file_path = os.path.join(destination_directory, "data_departements.csv")
