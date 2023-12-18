@@ -71,3 +71,4 @@ merged_df.to_csv(output_file_path, index=False)
 
 print(f"Le fichier CSV fusionné a été créé : {output_file_path}")
 
+
