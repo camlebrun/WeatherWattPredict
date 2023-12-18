@@ -1,5 +1,8 @@
+"""
+EDA (Exploratory Data Analysis) with PySpark
+"""
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col
+
 
 # Create a Spark session
 spark = SparkSession.builder.appName("CalculMoyenne").getOrCreate()
