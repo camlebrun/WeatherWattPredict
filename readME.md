@@ -1,4 +1,6 @@
 # Roadmap
+![Illustration picture](assets/picture/projects.jpg)
+*(Genereated with Image Creator)* 
 This is a roadmap for the project. It will be updated as the project progresses.
 ## Project Objective
 
