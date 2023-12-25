@@ -12,7 +12,7 @@ spark.sparkContext.setLogLevel("ERROR")
 # Load your DataFrame from a CSV file using semicolon as a separator
 # Replace 'your_path' and 'your_file.csv' with your actual path and file
 df = spark.read.csv(
-    'data/data_departements.csv',
+    'data/data_departements_2023.csv',
     header=True,
     inferSchema=True,
     sep=';')
@@ -36,4 +36,4 @@ filtered_df2 = df2.filter(col("AAAAMMJJ") >= 20100101)
 
 
 # Write the filtered DataFrame to a new CSV file
-filtered_df2.coalesce(1).write.csv("h")
+filtered_df2.coalesce(1).write.csv("data/data_2023.csv", sep=",", header=True, mode="overwrite")
